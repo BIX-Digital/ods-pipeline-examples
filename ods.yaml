@@ -4,7 +4,7 @@ branchToEnvironmentMapping:
 
 environments:
 - name: dev
-  namespace: {{PROJECT}}-dev
+  namespace: @project@-dev
   stage: dev
 
 pipeline:

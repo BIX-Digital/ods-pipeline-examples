@@ -1,6 +1,6 @@
 apiVersion: v2
-name: {{COMPONENT}}
-description: A Helm chart for {{COMPONENT}}
+name: @component@
+description: A Helm chart for @component@
 
 # A chart can be either an 'application' or a 'library' chart.
 #
