@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/python-38
 
-ARG nexusHostWithBasicAuth
-ARG nexusHostWithoutScheme
+ARG nexusUrlWithAuth
+ARG nexusHost
 
 WORKDIR /opt/app-root/src
 
@@ -13,8 +13,8 @@ COPY requirements.txt /opt/app-root/src
 
 USER 1001
 # From load pip install for caching docker build layers
-RUN if [ ! -z ${nexusHostWithBasicAuth} ]; \
-    then pip install -i ${nexusHostWithBasicAuth}/repository/pypi-all/simple --trusted-host ${nexusHostWithoutScheme} --upgrade pip && pip install -i ${nexusHostWithBasicAuth}/repository/pypi-all/simple --trusted-host ${nexusHostWithoutScheme} -r requirements.txt; \
+RUN if [ ! -z ${nexusUrlWithAuth} ]; \
+    then pip install -i ${nexusUrlWithAuth}/repository/pypi-all/simple --trusted-host ${nexusHost} --upgrade pip && pip install -i ${nexusUrlWithAuth}/repository/pypi-all/simple --trusted-host ${nexusHost} -r requirements.txt; \
     else pip install --upgrade pip && pip install -r requirements.txt; \
     fi && \
     pip check
