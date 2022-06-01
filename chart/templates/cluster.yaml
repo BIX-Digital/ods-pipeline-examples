@@ -1,4 +1,4 @@
-apiVersion: {{ .Values.apiGroup }}
+apiVersion: {{ .Values.apiVersion }}
 kind: Cluster
 metadata:
   name: {{ include "chart.fullname" . }}

@@ -2,8 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-apiGroup: postgresql.cnpg.io/v1 # Use postgresql.k8s.enterprisedb.io/v1 for EDB
-replicaCount: 1
+apiVersion: postgresql.cnpg.io/v1 # Use postgresql.k8s.enterprisedb.io/v1 for EDB
+instances: 3
 storageSize: 1Gi
 
 nameOverride: ""
