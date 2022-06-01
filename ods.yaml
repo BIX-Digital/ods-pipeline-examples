@@ -1,0 +1,18 @@
+branchToEnvironmentMapping:
+- branch: '*'
+  environment: dev
+
+environments:
+- name: dev
+  namespace: @project@-dev
+  stage: dev
+
+pipeline:
+  tasks:
+  - name: deploy
+    taskRef:
+      kind: Task
+      name: ods-deploy-helm-v0-4-0
+    workspaces:
+    - name: source
+      workspace: shared-workspace
