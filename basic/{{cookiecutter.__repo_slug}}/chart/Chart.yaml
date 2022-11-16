@@ -1,6 +1,6 @@
 apiVersion: v2
-name: {{cookiecutter._component_slug}}
-description: A Helm chart for {{cookiecutter._component_slug}}
+name: {{ cookiecutter.__component_slug }}
+description: A Helm chart for {{ cookiecutter.__component_slug }}
 
 # A chart can be either an 'application' or a 'library' chart.
 #
