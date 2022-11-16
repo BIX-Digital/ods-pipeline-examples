@@ -18,6 +18,6 @@ cookiecutter gh:bix-digital/ods-pipeline-examples --directory=basic
 
 # Available templates
 
-* [basic](/tree/main/basic)
-* [jupyter-lab](/tree/main/jupyter-labe)
-* [postgres-operator](/tree/main/postgres-operator)
+* [basic](basic)
+* [jupyter-lab](jupyter-labe)
+* [postgres-operator](postgres-operator)
