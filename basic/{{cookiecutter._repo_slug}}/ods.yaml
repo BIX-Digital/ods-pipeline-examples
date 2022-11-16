@@ -1,0 +1,27 @@
+branchToEnvironmentMapping:
+- branch: '*'
+  environment: dev
+
+environments:
+- name: dev
+  namespace: {{cookiecutter._project_slug}}-dev
+  stage: dev
+
+pipeline:
+  tasks:
+  - name: package
+    taskRef:
+      kind: Task
+      name: ods-package-image{{cookiecutter.task_suffix}}
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+  - name: deploy
+    taskRef:
+      kind: Task
+      name: ods-deploy-helm{{cookiecutter.task_suffix}}
+    runAfter:
+    - package
+    workspaces:
+    - name: source
+      workspace: shared-workspace

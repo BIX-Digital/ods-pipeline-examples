@@ -1,0 +1,11 @@
+{
+    "project_name": "",
+    "_project_slug": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
+    "component_name": "",
+    "_component_slug": "{{cookiecutter.component_name.lower().replace(' ', '-')}}",
+    "_repo_slug": "{{cookiecutter._project_slug}}-{{cookiecutter._component_slug}}",
+    "task_suffix": "-v0-3-0",
+    "_copy_without_render": [
+        "chart/templates/*"
+    ]
+  }

@@ -1,0 +1,11 @@
+apiVersion: {{ .Values.apiVersion }}
+kind: Cluster
+metadata:
+  name: {{ include "chart.fullname" . }}
+  labels:
+    {{- include "chart.labels" . | nindent 4 }}
+spec:
+  instances: {{ .Values.replicaCount }}
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: {{ .Values.storageSize }}
