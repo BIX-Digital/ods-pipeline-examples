@@ -4,7 +4,6 @@
     "component_name": "bar",
     "__component_slug": "{{cookiecutter.component_name.lower().replace(' ', '-')}}",
     "__repo_slug": "{{cookiecutter.__project_slug}}-{{cookiecutter.__component_slug}}",
-    "task_suffix": "-v0-7-0",
     "_copy_without_render": [
         "chart/templates/*"
     ]
