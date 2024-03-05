@@ -1,18 +1,15 @@
-branchToEnvironmentMapping:
-- branch: '*'
-  environment: dev
-
-environments:
-- name: dev
-  namespace: {{cookiecutter.__project_slug}}-dev
-  stage: dev
-
 pipeline:
   tasks:
   - name: deploy
     taskRef:
-      kind: Task
-      name: ods-deploy-helm{{cookiecutter.task_suffix}}
+      resolver: git
+      params:
+      - { name: url, value: https://github.com/opendevstack/ods-pipeline-helm.git }
+      - { name: revision, value: v0.4.1 }
+      - { name: pathInRepo, value: tasks/deploy.yaml }
+    params:
+    - name: namespace
+      value: {{ cookiecutter.__project_slug }}-dev
     workspaces:
     - name: source
       workspace: shared-workspace
